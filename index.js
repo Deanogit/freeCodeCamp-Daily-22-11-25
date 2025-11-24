@@ -4,3 +4,17 @@
 // Each item in the given array will be a string in the format: "quantity unit ingredient". For example "2 C Flour".
 // Scale the quantity by the given number. Do not include any trailing zeros and do not convert any units.
 // Return the scaled items in the same order they are given.
+
+function scaleRecipe(ingredients, scale) {
+  console.log(ingredients, scale);
+  // returns ["2 C Flour", "1.5 T Sugar"], 2
+  // loop through ingredients and return a new array
+  const array = ingredients.map((x) => x.split(' '));
+  console.log(array[1]);
+  // multiply the first array item by scale
+  const newArray = array.map((x) => `${x[0] * scale} ${x[1]} ${x[2]}`);
+  console.log(newArray);
+  // I'm missing some of the arrays ...
+  // return ingredients;
+  return newArray;
+}
