@@ -6,14 +6,16 @@
 // Return the scaled items in the same order they are given.
 
 function scaleRecipe(ingredients, scale) {
-  console.log(ingredients, scale);
+  console.log('This is whats in the arguments:', ingredients, scale);
   // returns ["2 C Flour", "1.5 T Sugar"], 2
   // loop through ingredients and return a new array
   const array = ingredients.map((x) => x.split(' '));
-  console.log(array[1]);
+  console.log('This is whats in the ingredients array', array[1]);
   // multiply the first array item by scale
-  const newArray = array.map((x) => `${x[0] * scale} ${x[1]} ${x[2]}`);
-  console.log(newArray);
+  const newArray = array.map(
+    (x) => `${x[0] * scale} ${x.map((y) => y.join(' '))}`
+  );
+  console.log('This is what is in the new array', newArray);
   // I'm missing some of the arrays ...
   // return ingredients;
   return newArray;
