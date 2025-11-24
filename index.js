@@ -22,8 +22,22 @@
 function scaleRecipe(ingredients, scale) {
   // for each ingredient
   // split up ingredients into an array
+  console.log(scale);
+  // write an shiftUnshift function
+  function shiftUnshift(x, scale) {
+    console.log(x, scale);
+    const shift = x.shift;
+    const unshift = shift * scale;
+    x.unshift(unshift.toString());
+    x.join(' ');
+    return x;
+  }
   const ingredientsArray = ingredients.map((x) => x.split(' '));
   console.log(ingredientsArray);
+  // loop through each entry
+  const scaled = ingredientsArray.map((x, scale) => shiftUnshift(x, scale));
+  console.log(scaled);
+  //ingredientsArray.unshift(shift * scale);
   // take the first entry
   //const newEntry = ingredientsArray.map((x) => x[0] * scale)
   //ingredientsArray[0] = ingredientsArray[0] * scale;
